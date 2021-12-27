@@ -5,7 +5,6 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-  console.log('get')
   return await userController.find_users(req, res)
 })
 

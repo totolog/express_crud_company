@@ -1,5 +1,4 @@
 // express_crud/api/routes/index.js
-console.log('bbb')
 const express = require('express')
 
 const router = express.Router()

@@ -5,12 +5,10 @@ const User = require('../models/user')
 module.exports = {
   // 全てのユーザーを取得する。
   find_users : async (req, res) => {
-    console.log('find_users')
     const users = await User.find({}).catch(err => {
       res.send(err)
       console.error(err)
     })
-    console.log('users:', users)
     return res.json(users)
   },
 
@@ -26,7 +24,6 @@ module.exports = {
       console.error(err)
       return
     })
-    console.log('user:', user)
     return res.json(user)
   },
 
@@ -48,6 +45,7 @@ module.exports = {
     })
     user.name = req.body.name
     user.age = req.body.age
+    user.permanent_staff = req.body.permanent_staff
     await user.save()
     return res.json(user)
   },
